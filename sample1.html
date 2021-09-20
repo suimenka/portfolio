@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サンプル ｜ suimenka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header id="header" class="sample">
+        <nav id="nav">
+          <h1 class="site-title"><a href="index.html">suimenka</a></h1>
+
+          <ul>
+            <li><a href="index.html#service">Service</a></li>
+            <li><a href="index.html#sample">Sample</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section id="sample">
+          <div class="section-title-center">
+            <h2 class="section-title-en">Sample</h2>
+            <p class="section-title-ja">こんなものが作れます</p>
+          </div>
+
+          <div class="sample-wrap">
+            <div class="sample-img">
+              <img src="img/sample1.jpg" alt="sample1" />
+            </div>
+            <div class="sample-txt">
+              <ul>
+                <p>
+                  <span>
+                    <i class="fas fa-fish blue-fish fa-rotate-180"></i>
+                  </span>
+                  自動車販売会社サイト
+                </p>
+                <li>
+                  <p>
+                    　<a
+                      href="https://suimenka.github.io/car_shop/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >https://suimenka.github.io/car_shop/</a
+                    >
+                  </p>
+                </li>
+              </ul>
+              <br />
+
+              <ul>
+                <p>
+                  <span>
+                    <i class="fas fa-fish blue-fish fa-rotate-180"></i> </span
+                  >主な特徴
+                </p>
+                <li>・1ページ完結型</li>
+                <li>・スマホで閲覧時はメニューを収納</li>
+              </ul>
+              <br />
+
+              <ul>
+                <p>
+                  <span>
+                    <i class="fas fa-fish blue-fish fa-rotate-180"></i> </span
+                  >制作範囲
+                </p>
+                <li>　デザイン / コーディング / スマホ対応</li>
+                <li>　既存サイトのリニューアル案として制作</li>
+              </ul>
+            </div>
+
+            <div id="openModal" class="circle-btn">
+              <p>スマホ版<br />イメージを<br />見る</p>
+            </div>
+          </div>
+
+          <!-- モーダルエリアここから -->
+          <section id="modalArea" class="modalArea">
+            <div id="modalBg" class="modalBg"></div>
+            <div class="modalWrapper">
+              <div class="modalContents">
+                <img src="img/car-m.jpg" alt="" />
+              </div>
+              <div id="closeModal" class="closeModal">×</div>
+            </div>
+          </section>
+          <!-- モーダルエリアここまで -->
+
+          <div class="sample-view">
+            <img src="img/car-p.jpg" alt="" />
+          </div>
+          <div class="readmore back">
+            <a href="sample-list.html"><span>戻る</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer">
+        <p class="copyright">© 2021 suimenka All Rights Reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        const modalArea = document.getElementById("modalArea");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+        const modalBg = document.getElementById("modalBg");
+        const toggle = [openModal, closeModal, modalBg];
+
+        for (let i = 0, len = toggle.length; i < len; i++) {
+          toggle[i].addEventListener(
+            "click",
+            function () {
+              modalArea.classList.toggle("is-show");
+            },
+            false
+          );
+        }
+      })();
+    </script>
+  </body>
+</html>
