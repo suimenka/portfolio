@@ -254,7 +254,6 @@ p {
   position: sticky;
   top: 0;
   z-index: 4;
-  margin-bottom: 80px;
 }
 
 #header #nav {
@@ -514,6 +513,7 @@ p {
 
 #service,
 #sample,
+#about,
 #contact {
   margin-bottom: 160px;
 }
@@ -521,6 +521,7 @@ p {
 @media screen and (max-width: 599px) {
   #service,
   #sample,
+  #about,
   #contact {
     width: 100%;
   }
@@ -560,6 +561,13 @@ p {
   height: 470px;
 }
 
+@media screen and (max-width: 599px) {
+  #service .s-menu {
+    width: 90%;
+    margin-right: 0;
+  }
+}
+
 #service .s-menu.front {
   position: relative;
   background: #c7e1ed;
@@ -573,17 +581,6 @@ p {
   #service .s-menu.front {
     padding: 56px 20px;
     margin-right: 20px;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  #service .s-menu.front {
-    width: 90%;
-    margin-right: 0;
-    margin-bottom: 80px;
-  }
-  #service .s-menu.front:last-child {
-    margin-bottom: 0;
   }
 }
 
@@ -624,6 +621,26 @@ p {
   /* 左側の波 */
   left: 0.1%;
   top: 40%;
+}
+
+@media screen and (max-width: 599px) {
+  #service .s-menu.front {
+    margin-right: 20px;
+    margin-bottom: 80px;
+  }
+  #service .s-menu.front:last-child {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+#service .s-menu.front .s-menu.back {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  border: 2px solid #72a9c2;
+  z-index: -1;
+  /*  親要素の下に潜り込ませる */
 }
 
 #service img {
@@ -676,12 +693,10 @@ p {
 #sample .grid {
   display: -ms-grid;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 40px;
   /* 行列の隙間 */
-  width: 80%;
-  margin: 0 auto;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 #sample .g-item {
@@ -707,20 +722,13 @@ p {
 アバウト
 -------------------------------------------*/
 #about {
-  margin: 0 auto 360px;
-  width: 80%;
+  margin-bottom: 360px;
   position: relative;
-}
-
-@media screen and (max-width: 599px) {
-  #about {
-    width: 100%;
-  }
 }
 
 #about .about-1,
 #about .about-2 {
-  width: 500px;
+  width: 530px;
   height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -744,6 +752,7 @@ p {
 #about .about-1 {
   background: rgba(149, 197, 224, 0.5);
   border: 2px solid #95c5e0;
+  margin-left: 24px;
 }
 
 @media screen and (max-width: 599px) {
@@ -773,6 +782,7 @@ p {
   position: absolute;
   top: 90%;
   right: 0%;
+  margin-right: 24px;
 }
 
 @media screen and (max-width: 599px) {
@@ -950,84 +960,97 @@ p {
 /*-------------------------------------------
 サンプル個別
 -------------------------------------------*/
-.sample-view {
+.sample-wrap {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0 120px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 599px) {
+  .sample-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+}
+
+.sample-wrap .sample-img {
+  width: 30%;
+}
+
+.sample-wrap .sample-img img {
+  max-width: 250px;
+}
+
+@media screen and (max-width: 599px) {
+  .sample-wrap .sample-img {
+    width: 100%;
+    text-align: center;
+  }
+  .sample-wrap .sample-img img {
+    max-width: 300px;
+  }
+}
+
+.sample-wrap .sample-txt {
+  width: 65%;
+}
+
+@media screen and (max-width: 599px) {
+  .sample-wrap .sample-txt {
+    width: 300px;
+    margin: 20px auto 0;
+  }
+}
+
+.sample-wrap .sample-txt .blue-fish {
+  color: #95c5e0;
+}
+
+.sample-wrap .sample-txt a {
+  color: #95c5e0;
+  border-bottom: 1px dashed #95c5e0;
+}
+
+.sample-wrap .sample-txt a:hover {
+  border-bottom: none;
+}
+
+.sample-view {
+  margin-top: 80px;
+  padding: 0 80px;
 }
 
 @media screen and (max-width: 599px) {
   .sample-view {
-    margin: 0;
     padding: 0;
     text-align: center;
+    margin-top: 200px;
   }
-}
-
-.sample-view p {
-  display: inline-block;
 }
 
 .sample-view img {
-  width: 100%;
+  max-width: 300px;
   height: auto;
   border: 1px solid #c9c9c9;
-  margin: 0 auto;
-}
-
-.sample-txt {
-  margin-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  text-align-last: left;
-}
-
-.sample-txt dt,
-.sample-txt dd {
-  padding: 20px 0;
-  border-bottom: 1px solid #c6c6c6;
-}
-
-.sample-txt dt {
-  width: 20%;
-}
-
-.sample-txt dd {
-  width: 80%;
-}
-
-@media screen and (max-width: 599px) {
-  .sample-txt {
-    margin-top: 20px;
-    font-size: 1.2rem;
-  }
-}
-
-.sample-txt a {
-  color: #95c5e0;
-}
-
-.sample-txt a:hover {
-  border-bottom: none;
 }
 
 #openModal {
   position: absolute;
-  top: -2px;
-  left: 120px;
-  width: 140px;
+  bottom: 20px;
+  right: 100px;
+  width: 150px;
+  height: 150px;
   background: #c7e1ed;
-  opacity: 0.9;
-  border-radius: 10px;
+  opacity: 0.5;
+  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1038,6 +1061,25 @@ p {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 599px) {
+  #openModal {
+    bottom: -180px;
+    right: 25%;
+  }
+}
+
+#openModal:before {
+  content: "";
+  position: absolute;
+  right: 120px;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background: #95c5e0;
+  opacity: 0.8;
+  border-radius: 50%;
 }
 
 #openModal p {
@@ -1072,7 +1114,7 @@ p {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 400px;
+  width: 70%;
   max-width: 500px;
   padding: 10px 30px;
   background-color: #fff;
@@ -1095,8 +1137,8 @@ p {
 
 .closeModal {
   position: absolute;
-  top: 0;
-  right: 2rem;
+  top: 0.5rem;
+  right: 3rem;
   cursor: pointer;
   font-size: 5rem;
 }
@@ -1115,4 +1157,4 @@ p {
 }
 
 /* モーダルCSSここまで */
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-copy.css.map */
