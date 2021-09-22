@@ -703,6 +703,18 @@ p {
   display: block;
 }
 
+#sample .readmore a:hover {
+  color: #fff;
+}
+
+#sample .readmore:hover {
+  cursor: pointer;
+  background: #72a9c2;
+  border: 2px solid #72a9c2;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
 /*-------------------------------------------
 アバウト
 -------------------------------------------*/
@@ -853,7 +865,7 @@ p {
   }
 }
 
-#contact form .btn {
+#contact form .submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -862,18 +874,24 @@ p {
           justify-content: center;
 }
 
-#contact form .btn button {
-  width: 50%;
-  height: 50px;
+#contact form .submit button {
+  margin: 80px auto 0;
+  width: 200px;
+  height: 60px;
   background: #fff;
-  margin: 40px 0 auto;
-  display: inline-block;
   border: 2px solid #c7e1ed;
-  letter-spacing: 0.08em;
+  display: block;
+  line-height: 60px;
+  text-align: center;
   font-size: 1.6rem;
+  letter-spacing: 0.08em;
 }
 
-#contact form .btn button:hover {
+#contact form .submit button a {
+  display: block;
+}
+
+#contact form .submit button:hover {
   cursor: pointer;
   background: #72a9c2;
   border: 2px solid #72a9c2;
