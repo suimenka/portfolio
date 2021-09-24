@@ -221,7 +221,7 @@ p {
     align-items: center;
 
     @media screen and (max-width: 899px) {
-      padding: 0 40px 10px 40px;
+      padding: 10px 40px;
     }
 
     @media screen and (max-width: 599px) {
@@ -232,57 +232,64 @@ p {
       padding-bottom: 10px;
       height: auto;
     }
-
-    .site-title {
-      a {
-        font-size: 3rem;
-        font-family: Oleo Script;
-        font-weight: normal;
-        letter-spacing: 0.08em;
-        color: #fffade;
-      }
-    }
-
-    ul {
-      display: flex;
-    }
-
-    li {
-      padding-left: 56px;
-
-      a {
-        color: #fff;
-      }
-
-      @media screen and (max-width: 599px) {
-        padding-left: 30px;
-
-        &:first-child {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-}
-
-#header.sample {
-  height: auto;
-  background: #fff;
-
-  #nav {
-    background: #95c5e0;
   }
 
   .site-title {
     a {
+      display: inline-block;
+      font-size: 3rem;
+      font-family: Oleo Script;
+      font-weight: normal;
+      letter-spacing: 0.08em;
       color: #fffade;
     }
   }
 
-  a {
-    color: #fff;
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding-left: 56px;
+
+    @media screen and (max-width: 599px) {
+      padding-left: 30px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    a {
+      position: relative;
+      color: #fff;
+    }
+
+    a::after {
+      /*マークのスタイル*/
+      position: absolute;
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: -15px;
+      left: calc(50% - 5px);
+      /*不透明度0で非表示*/
+      opacity: 0;
+      /*アニメーションの速度設定*/
+      -webkit-transition: all 0.1s ease;
+      transition: all 0.1s ease;
+    }
+    a:hover::after {
+      /*不透明度1で表示*/
+      opacity: 1;
+    }
   }
 }
+
+// ホバーエフェクト参考：https://cr-note.com/blog25/
 
 /*-------------------------------------------
 ファーストビュー
@@ -310,6 +317,16 @@ p {
     letter-spacing: 0.08em;
     background: transparent;
     text-shadow: 0px 10px 1px #316482;
+    animation: fadeIn 3s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     @media (max-width: 599px) {
       font-size: 5rem;
@@ -481,7 +498,7 @@ p {
 #main {
   max-width: 1200px;
   margin: 80px auto;
-  padding: 0 60px;
+  padding: 0 120px;
 
   @media screen and (max-width: 899px) {
     margin: 80px auto;
@@ -521,26 +538,22 @@ p {
     }
   }
 
-  .s-menu {
-    width: 30%;
-    height: 470px;
-  }
-
-  .s-menu.front {
+  .service-menu {
     position: relative;
     background: #c7e1ed;
     padding: 56px 40px;
-    margin-right: 80px;
+    margin-right: 60px;
     text-align: center;
     border-radius: 10px 10px 0 0;
+    width: calc(96% / 3);
+    height: 450px;
 
     @media screen and (max-width: 899px) {
-      padding: 56px 20px;
-      margin-right: 20px;
+      margin-right: 40px;
     }
 
     @media screen and (max-width: 599px) {
-      width: 90%;
+      width: 80%;
       margin-right: 0;
       margin-bottom: 80px;
 
@@ -591,8 +604,18 @@ p {
     width: 80px;
   }
 
+  p {
+    @media (max-width: 1024px) and (min-width: 600px) {
+      font-size: 1.4rem;
+    }
+
+    @media screen and (max-width: 599px) {
+      font-size: 1.6rem;
+    }
+  }
+
   .service-title {
-    font-size: 50px;
+    font-size: 40px;
     font-family: Oleo Script;
     color: #fff;
     opacity: 0.7;
@@ -614,12 +637,12 @@ p {
       border-color: transparent transparent transparent #c4c4c4;
       position: absolute;
       top: 50%;
-      right: 25px;
+      right: 20px;
       margin-top: -6px;
 
       @media screen and (max-width: 899px) {
         border-width: 12px 0 12px 20px;
-        right: -1px;
+        right: 8px;
       }
     }
 
@@ -627,6 +650,26 @@ p {
       display: none;
     }
   }
+}
+
+/* アニメーション前 */
+.u-fade-type-up {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+/* トリガー発火でis-activeを付与 */
+.u-fade-type-up.is-active {
+  transition: 0.6s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.is-active .u-fade-type-up:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.is-active .u-fade-type-up:nth-child(3) {
+  transition-delay: 0.8s;
 }
 
 /*-------------------------------------------
@@ -637,13 +680,13 @@ p {
   .grid {
     display: grid;
     grid-gap: 20px; /* 行列の隙間 */
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 
     // 最小300px、最大は画面幅に合わせる処理をアイテムがある分繰り返す
     // fr=外枠に合わせてグリッドを分割し、そのサイズを自動調整する
     // 参考：https://web.hazu.jp/grid-layout-02/
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   .g-item {
@@ -670,8 +713,7 @@ p {
 
     &:hover {
       cursor: pointer;
-      background: #72a9c2;
-      border: 2px solid #72a9c2;
+      background: #c7e1ed;
       transition-duration: 0.3s;
     }
   }
@@ -683,7 +725,7 @@ p {
 
 #about {
   margin: 0 auto 360px;
-  width: 80%;
+  width: 100%;
   position: relative;
 
   @media screen and (max-width: 599px) {
@@ -723,7 +765,7 @@ p {
       }
 
       .black-fish {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
       }
     }
@@ -856,8 +898,7 @@ p {
 
         &:hover {
           cursor: pointer;
-          background: #72a9c2;
-          border: 2px solid #72a9c2;
+          background: #c7e1ed;
           color: #fff;
           transition-duration: 0.3s;
         }

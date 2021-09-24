@@ -274,7 +274,7 @@ p {
 
 @media screen and (max-width: 899px) {
   #header #nav {
-    padding: 0 40px 10px 40px;
+    padding: 10px 40px;
   }
 }
 
@@ -292,7 +292,8 @@ p {
   }
 }
 
-#header #nav .site-title a {
+#header .site-title a {
+  display: inline-block;
   font-size: 3rem;
   font-family: Oleo Script;
   font-weight: normal;
@@ -300,44 +301,51 @@ p {
   color: #fffade;
 }
 
-#header #nav ul {
+#header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#header #nav li {
+#header li {
   padding-left: 56px;
 }
 
-#header #nav li a {
-  color: #fff;
-}
-
 @media screen and (max-width: 599px) {
-  #header #nav li {
+  #header li {
     padding-left: 30px;
   }
-  #header #nav li:first-child {
+  #header li:first-child {
     padding-left: 0;
   }
 }
 
-#header.sample {
-  height: auto;
-  background: #fff;
-}
-
-#header.sample #nav {
-  background: #95c5e0;
-}
-
-#header.sample .site-title a {
-  color: #fffade;
-}
-
-#header.sample a {
+#header li a {
+  position: relative;
   color: #fff;
+}
+
+#header li a::after {
+  /*マークのスタイル*/
+  position: absolute;
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: -15px;
+  left: calc(50% - 5px);
+  /*不透明度0で非表示*/
+  opacity: 0;
+  /*アニメーションの速度設定*/
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+#header li a:hover::after {
+  /*不透明度1で表示*/
+  opacity: 1;
 }
 
 /*-------------------------------------------
@@ -371,6 +379,26 @@ p {
   letter-spacing: 0.08em;
   background: transparent;
   text-shadow: 0px 10px 1px #316482;
+  -webkit-animation: fadeIn 3s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+          animation: fadeIn 3s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 599px) {
@@ -496,7 +524,7 @@ p {
 #main {
   max-width: 1200px;
   margin: 80px auto;
-  padding: 0 60px;
+  padding: 0 120px;
 }
 
 @media screen and (max-width: 899px) {
@@ -555,43 +583,39 @@ p {
   }
 }
 
-#service .s-menu {
-  width: 30%;
-  height: 470px;
-}
-
-#service .s-menu.front {
+#service .service-menu {
   position: relative;
   background: #c7e1ed;
   padding: 56px 40px;
-  margin-right: 80px;
+  margin-right: 60px;
   text-align: center;
   border-radius: 10px 10px 0 0;
+  width: calc(96% / 3);
+  height: 450px;
 }
 
 @media screen and (max-width: 899px) {
-  #service .s-menu.front {
-    padding: 56px 20px;
-    margin-right: 20px;
+  #service .service-menu {
+    margin-right: 40px;
   }
 }
 
 @media screen and (max-width: 599px) {
-  #service .s-menu.front {
-    width: 90%;
+  #service .service-menu {
+    width: 80%;
     margin-right: 0;
     margin-bottom: 80px;
   }
-  #service .s-menu.front:last-child {
+  #service .service-menu:last-child {
     margin-bottom: 0;
   }
 }
 
-#service .s-menu.front:last-child {
+#service .service-menu:last-child {
   margin-right: 0;
 }
 
-#service .s-menu.front .wave {
+#service .service-menu .wave {
   position: absolute;
   height: 70px;
   width: 100%;
@@ -600,15 +624,15 @@ p {
   left: 0;
 }
 
-#service .s-menu.front .wave::before,
-#service .s-menu.front .wave::after {
+#service .service-menu .wave::before,
+#service .service-menu .wave::after {
   content: "";
   display: block;
   position: absolute;
   border-radius: 100% 50%;
 }
 
-#service .s-menu.front .wave::before {
+#service .service-menu .wave::before {
   width: 55%;
   height: 109%;
   background-color: #fff;
@@ -617,7 +641,7 @@ p {
   top: 60%;
 }
 
-#service .s-menu.front .wave::after {
+#service .service-menu .wave::after {
   width: 55%;
   height: 100%;
   background: #c7e1ed;
@@ -630,8 +654,20 @@ p {
   width: 80px;
 }
 
+@media (max-width: 1024px) and (min-width: 600px) {
+  #service p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #service p {
+    font-size: 1.6rem;
+  }
+}
+
 #service .service-title {
-  font-size: 50px;
+  font-size: 40px;
   font-family: Oleo Script;
   color: #fff;
   opacity: 0.7;
@@ -653,14 +689,14 @@ p {
   border-color: transparent transparent transparent #c4c4c4;
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 20px;
   margin-top: -6px;
 }
 
 @media screen and (max-width: 899px) {
   #service .arrow:before {
     border-width: 12px 0 12px 20px;
-    right: -1px;
+    right: 8px;
   }
 }
 
@@ -668,6 +704,32 @@ p {
   #service .arrow {
     display: none;
   }
+}
+
+/* アニメーション前 */
+.u-fade-type-up {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+}
+
+/* トリガー発火でis-activeを付与 */
+.u-fade-type-up.is-active {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.is-active .u-fade-type-up:nth-child(2) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.is-active .u-fade-type-up:nth-child(3) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
 }
 
 /*-------------------------------------------
@@ -678,10 +740,10 @@ p {
   display: grid;
   grid-gap: 20px;
   /* 行列の隙間 */
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -ms-grid-columns: (minmax(220px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 #sample .g-item {
@@ -709,8 +771,7 @@ p {
 
 #sample .readmore:hover {
   cursor: pointer;
-  background: #72a9c2;
-  border: 2px solid #72a9c2;
+  background: #c7e1ed;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
@@ -720,7 +781,7 @@ p {
 -------------------------------------------*/
 #about {
   margin: 0 auto 360px;
-  width: 80%;
+  width: 100%;
   position: relative;
 }
 
@@ -775,7 +836,7 @@ p {
 }
 
 #about .about-1 .txt .black-fish {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -893,8 +954,7 @@ p {
 
 #contact form .submit button:hover {
   cursor: pointer;
-  background: #72a9c2;
-  border: 2px solid #72a9c2;
+  background: #c7e1ed;
   color: #fff;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
