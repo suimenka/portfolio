@@ -367,93 +367,6 @@ p {
   }
 }
 
-// .circles {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   margin-right: 140px;
-//   z-index: 3;
-//   top: 75px;
-//   left: 400px;
-
-//   @media (max-width: 599px) {
-//     position: static;
-//     margin: 0;
-//     padding-top: 160px;
-//   }
-// }
-
-// .circle-1,
-// .circle-2,
-// .circle-3 {
-//   background: #c7e1ed;
-//   opacity: 0.5;
-//   padding: 2%;
-//   width: 180px;
-//   height: 180px;
-//   margin: 0 10px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin-left: 20px;
-//   border-radius: 50%;
-//   mix-blend-mode: multiply;
-
-//   @media (max-width: 599px) {
-//     width: 110px;
-//     height: 110px;
-//   }
-// }
-
-// .circle-1 {
-//   border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
-// }
-// .circle-2 {
-//   border-radius: 80% 30% 50% 50%/50%;
-// }
-// .circle-3 {
-//   border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
-// }
-
-// .circle-txt {
-//   text-align: center;
-
-//   @media (max-width: 599px) {
-//     font-size: 1.4rem;
-//   }
-// }
-
-.wave {
-  position: absolute;
-  height: 70px;
-  width: 100%;
-  background: #95c5e0;
-  bottom: 0;
-}
-
-.wave::before,
-.wave::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 50%;
-}
-
-.wave::before {
-  width: 55%;
-  height: 109%;
-  background-color: #fff; /* 右側の波 */
-  right: -1.5%;
-  top: 60%;
-}
-.wave::after {
-  width: 55%;
-  height: 100%;
-  background: #95c5e0; /* 左側の波 */
-  left: -1.5%;
-  top: 40%;
-}
-
 /*-------------------------------------------
 キャッチコピー
 -------------------------------------------*/
@@ -592,7 +505,7 @@ p {
       width: 55%;
       height: 100%;
       background: #c7e1ed; /* 左側の波 */
-      left: 0.1%;
+      left: 0;
       top: 40%;
     }
   }
