@@ -218,7 +218,7 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
     padding-bottom: 10px;
-    height: auto;
+    height: 100px;
   }
 }
 
@@ -1003,7 +1003,7 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  text-align-last: left;
+  text-align: left;
 }
 
 .sample-txt dt,
