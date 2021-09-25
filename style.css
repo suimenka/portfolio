@@ -434,9 +434,15 @@ p {
   }
 }
 
-@media screen and (max-width: 900px) {
-  #main {
-    margin: 40px auto;
+#main.works-list,
+#main.works-view {
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 599px) {
+  #main.works-list,
+  #main.works-view {
+    padding-top: 120px;
   }
 }
 

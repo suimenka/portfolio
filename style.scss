@@ -414,8 +414,17 @@ p {
     padding: 0 20px;
   }
 
-  @media screen and (max-width: 900px) {
-    margin: 40px auto;
+  // @media screen and (max-width: 900px) {
+  //   margin: 40px auto;
+  // }
+}
+
+#main.works-list,
+#main.works-view {
+  padding-top: 80px;
+
+  @media screen and (max-width: 599px) {
+    padding-top: 120px;
   }
 }
 
