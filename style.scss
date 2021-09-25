@@ -99,16 +99,6 @@ p {
   }
 }
 
-// .bubbles {
-//   position: absolute;
-//   width: 100%;
-//   height: 120%;
-//   z-index: 1;
-//   overflow: hidden;
-//   top: 0;
-//   left: 0;
-// }
-
 .bubble {
   position: absolute;
   bottom: -40px;
@@ -167,38 +157,38 @@ p {
   }
 }
 
-.fish {
-  position: absolute;
-  top: 50px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  animation: fish 20s ease-in infinite;
-  animation-duration: 18s;
-}
+// .fish {
+//   position: absolute;
+//   top: 50px;
+//   width: 40px;
+//   height: 40px;
+//   background-color: transparent;
+//   animation: fish 20s ease-in infinite;
+//   animation-duration: 18s;
+// }
 
-@keyframes fish {
-  0% {
-    right: -100px;
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(70px);
-  }
-  40% {
-    transform: translateY(90px);
-  }
-  60% {
-    transform: translateY(60px);
-  }
-  80% {
-    transform: translateY(180px);
-  }
-  100% {
-    transform: translateY(280px);
-    right: 1500px;
-  }
-}
+// @keyframes fish {
+//   0% {
+//     right: -100px;
+//     transform: translateY(0);
+//   }
+//   20% {
+//     transform: translateY(70px);
+//   }
+//   40% {
+//     transform: translateY(90px);
+//   }
+//   60% {
+//     transform: translateY(60px);
+//   }
+//   80% {
+//     transform: translateY(180px);
+//   }
+//   100% {
+//     transform: translateY(280px);
+//     right: 1500px;
+//   }
+// }
 
 /*-------------------------------------------
 ヘッダー
@@ -289,6 +279,10 @@ p {
   }
 }
 
+#header.sample-page {
+  position: fixed;
+}
+
 // ホバーエフェクト参考：https://cr-note.com/blog25/
 
 /*-------------------------------------------
@@ -318,6 +312,7 @@ p {
     background: transparent;
     text-shadow: 0px 10px 1px #316482;
     animation: fadeIn 3s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+    //TODO:グローバルに持っていく
 
     @keyframes fadeIn {
       0% {
@@ -339,6 +334,7 @@ p {
     .circle-03 {
       position: absolute;
       top: 3%;
+      // TODO:変数にする
       background: #c7e1ed;
       opacity: 0.5;
       width: 180px;
@@ -511,7 +507,7 @@ p {
 }
 
 #service,
-#sample,
+#works,
 #contact {
   margin-bottom: 160px;
 
@@ -545,6 +541,7 @@ p {
     margin-right: 60px;
     text-align: center;
     border-radius: 10px 10px 0 0;
+    //TODO:割り切れなくても良し
     width: calc(96% / 3);
     height: 450px;
 
@@ -553,7 +550,7 @@ p {
     }
 
     @media screen and (max-width: 599px) {
-      width: 80%;
+      width: 90%;
       margin-right: 0;
       margin-bottom: 80px;
 
@@ -673,10 +670,10 @@ p {
 }
 
 /*-------------------------------------------
-サンプル
+ワークス
 -------------------------------------------*/
 
-#sample {
+#works {
   .grid {
     display: grid;
     grid-gap: 20px; /* 行列の隙間 */
@@ -698,7 +695,8 @@ p {
     width: 200px;
     height: 60px;
     background: #fff;
-    border: 2px solid #c7e1ed;
+    border: 2px solid #95c5e0;
+    border-radius: 10px;
     display: block;
     line-height: 60px;
     text-align: center;
@@ -713,7 +711,7 @@ p {
 
     &:hover {
       cursor: pointer;
-      background: #c7e1ed;
+      background: #95c5e0;
       transition-duration: 0.3s;
     }
   }
@@ -739,6 +737,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 
     @media screen and (max-width: 599px) {
       width: 270px;
@@ -885,7 +884,8 @@ p {
         width: 200px;
         height: 60px;
         background: #fff;
-        border: 2px solid #c7e1ed;
+        border: 2px solid #95c5e0;
+        border-radius: 10px;
         display: block;
         line-height: 60px;
         text-align: center;
@@ -898,7 +898,7 @@ p {
 
         &:hover {
           cursor: pointer;
-          background: #c7e1ed;
+          background: #95c5e0;
           color: #fff;
           transition-duration: 0.3s;
         }
@@ -1013,7 +1013,6 @@ p {
 
   a {
     color: #95c5e0;
-    // border-bottom: 1px dashed #95c5e0;
 
     &:hover {
       border-bottom: none;

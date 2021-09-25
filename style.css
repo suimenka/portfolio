@@ -175,76 +175,6 @@ p {
   }
 }
 
-.fish {
-  position: absolute;
-  top: 50px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  -webkit-animation: fish 20s ease-in infinite;
-          animation: fish 20s ease-in infinite;
-  -webkit-animation-duration: 18s;
-          animation-duration: 18s;
-}
-
-@-webkit-keyframes fish {
-  0% {
-    right: -100px;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  20% {
-    -webkit-transform: translateY(70px);
-            transform: translateY(70px);
-  }
-  40% {
-    -webkit-transform: translateY(90px);
-            transform: translateY(90px);
-  }
-  60% {
-    -webkit-transform: translateY(60px);
-            transform: translateY(60px);
-  }
-  80% {
-    -webkit-transform: translateY(180px);
-            transform: translateY(180px);
-  }
-  100% {
-    -webkit-transform: translateY(280px);
-            transform: translateY(280px);
-    right: 1500px;
-  }
-}
-
-@keyframes fish {
-  0% {
-    right: -100px;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  20% {
-    -webkit-transform: translateY(70px);
-            transform: translateY(70px);
-  }
-  40% {
-    -webkit-transform: translateY(90px);
-            transform: translateY(90px);
-  }
-  60% {
-    -webkit-transform: translateY(60px);
-            transform: translateY(60px);
-  }
-  80% {
-    -webkit-transform: translateY(180px);
-            transform: translateY(180px);
-  }
-  100% {
-    -webkit-transform: translateY(280px);
-            transform: translateY(280px);
-    right: 1500px;
-  }
-}
-
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
@@ -346,6 +276,10 @@ p {
 #header li a:hover::after {
   /*不透明度1で表示*/
   opacity: 1;
+}
+
+#header.sample-page {
+  position: fixed;
 }
 
 /*-------------------------------------------
@@ -541,14 +475,14 @@ p {
 }
 
 #service,
-#sample,
+#works,
 #contact {
   margin-bottom: 160px;
 }
 
 @media screen and (max-width: 599px) {
   #service,
-  #sample,
+  #works,
   #contact {
     width: 100%;
   }
@@ -602,7 +536,7 @@ p {
 
 @media screen and (max-width: 599px) {
   #service .service-menu {
-    width: 80%;
+    width: 90%;
     margin-right: 0;
     margin-bottom: 80px;
   }
@@ -733,9 +667,9 @@ p {
 }
 
 /*-------------------------------------------
-サンプル
+ワークス
 -------------------------------------------*/
-#sample .grid {
+#works .grid {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
@@ -746,32 +680,33 @@ p {
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-#sample .g-item {
+#works .g-item {
   text-align: center;
 }
 
-#sample .readmore {
+#works .readmore {
   margin: 80px auto 0;
   width: 200px;
   height: 60px;
   background: #fff;
-  border: 2px solid #c7e1ed;
+  border: 2px solid #95c5e0;
+  border-radius: 10px;
   display: block;
   line-height: 60px;
   text-align: center;
 }
 
-#sample .readmore a {
+#works .readmore a {
   display: block;
 }
 
-#sample .readmore a:hover {
+#works .readmore a:hover {
   color: #fff;
 }
 
-#sample .readmore:hover {
+#works .readmore:hover {
   cursor: pointer;
-  background: #c7e1ed;
+  background: #95c5e0;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
@@ -804,6 +739,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 599px) {
@@ -940,7 +876,8 @@ p {
   width: 200px;
   height: 60px;
   background: #fff;
-  border: 2px solid #c7e1ed;
+  border: 2px solid #95c5e0;
+  border-radius: 10px;
   display: block;
   line-height: 60px;
   text-align: center;
@@ -954,7 +891,7 @@ p {
 
 #contact form .submit button:hover {
   cursor: pointer;
-  background: #c7e1ed;
+  background: #95c5e0;
   color: #fff;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
