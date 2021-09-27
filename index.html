@@ -65,7 +65,6 @@
           </div>
 
           <ul class="service-content">
-
             <li class="service-menu u-fade-type-up js-scroll-trigger">
               <img src="img/icon1.png" alt="Hearing" />
               <div class="service-title">Hearing</div>
@@ -160,18 +159,34 @@
         <section id="about">
           <div class="section-title-center">
             <h2 class="section-title-en">About</h2>
-            <p class="section-title-ja">私について</p>
+            <p class="section-title-ja">コンセプトと、私について</p>
           </div>
           <div class="about-1 u-fade-type-up js-scroll-trigger">
-            <div class="txt">
-              <p>
+            <div class="concept">
+              <p class="catch">『 suimenka = 水面下 』</p>
+              <p class="fish">
                 <i class="fas fa-fish black-fish fa-rotate-180"></i>
               </p>
+
+              <div class="concept-txt-pc">
               <p>
-                クライアント様の持っている<br />イメージ ･アイディア
-                ･らしさを<br />
-                大切にしたHP制作を心がけています。
+                Webサイトの素敵なところはこだわりや<br />オリジナリティを発信できる点です。
               </p>
+              <p>
+                水面下にあるイメージ･アイディア･らしさを<br />
+                浮上させて、ぜひ形にしてみませんか？
+              </p>
+              </div>
+              <div class="concept-txt-sp">
+                <p>
+                  Webサイトの素敵なところはこだわりやオリジナリティを発信できる点です。
+                </p>
+                <br>
+                <p>
+                  水面下にあるイメージ･アイディア･らしさを浮上させて、<br>ぜひ形にしてみませんか？
+                </p>
+                </div>
+
             </div>
 
             <div class="bubble"></div>
@@ -183,11 +198,30 @@
           </div>
 
           <div class="about-2 u-fade-type-up js-scroll-trigger">
-            <div class="txt">
-              <p class="sitename">suimenka</p>
-              <p class="myname">Saori Suzuki</p></p>
-              <p>URL : https://suimenka.work</p>
-              <p>MAIL : suimenka-info@gmail.com</p>
+            <div class="profile">
+              <div class="profile-img">
+              <img src="img/profile.png" alt="" プロフィール画像 />
+            </div>
+              <div class="profile-txt-pc">
+                <p class="myname">NAME : Saori Suzuki</p>
+                <p>一般企業で約10年間経理職に従事。<br>
+                趣味でサイト運営をしていた経験から<br>
+                Web制作の世界に惹かれコーダーへ。</p>
+
+                <p>表現することの楽しさを第一に、<br>
+                日々スキルアップしています。</p>
+              </p>
+            </div>
+            <div class="profile-txt-sp">
+              <p class="myname">NAME : Saori Suzuki</p>
+              <p>一般企業で約10年間経理職に従事。
+              趣味でサイト運営をしていた経験からWeb制作の世界に惹かれコーダーへ。</p>
+
+              <p>表現することの楽しさを第一に、日々スキルアップしています。</p>
+            </p>
+          </div>
+              <!-- <p>URL : https://suimenka.work</p> -->
+              <!-- <p>MAIL : suimenka-info@gmail.com</p> -->
             </div>
           </div>
         </section>
@@ -232,7 +266,7 @@
               </dt>
               <dd class="selectbox">
                 <select name="item">
-                  <option value="">お問い合わせの種類をご選択ください</option>
+                  <option hidden>お問い合わせの種類をご選択ください</option>
                   <option value="ご相談･お見積り">ご相談･お見積り</option>
                   <option value="ご依頼">ご依頼</option>
                   <option value="その他">その他</option>
@@ -272,29 +306,29 @@
       </footer>
     </div>
 
-<script>
-  $(function () {
-    // aimation呼び出し
-    if ($('.js-scroll-trigger').length) {
-        scrollAnimation();
-    }
+    <script>
+      $(function () {
+        // aimation呼び出し
+        if ($(".js-scroll-trigger").length) {
+          scrollAnimation();
+        }
 
-    // aimation関数
-    function scrollAnimation() {
-        $(window).scroll(function () {
+        // aimation関数
+        function scrollAnimation() {
+          $(window).scroll(function () {
             $(".js-scroll-trigger").each(function () {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
+              let position = $(this).offset().top,
+                scroll = $(window).scrollTop(),
+                windowHeight = $(window).height();
 
-                if (scroll > position - windowHeight + 200) {
-                    $(this).addClass('is-active');
-                }
+              if (scroll > position - windowHeight + 200) {
+                $(this).addClass("is-active");
+              }
             });
-        });
-    }
-    $(window).trigger('scroll');
-});
-</script>
+          });
+        }
+        $(window).trigger("scroll");
+      });
+    </script>
   </body>
 </html>

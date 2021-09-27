@@ -19,6 +19,14 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
+  scroll-padding-top: 100px;
+  /* 固定ヘッダの高さ分 */
+}
+
+@media screen and (max-width: 599px) {
+  html {
+    scroll-padding-top: 120px;
+  }
 }
 
 body {
@@ -180,6 +188,7 @@ p {
 -------------------------------------------*/
 #header {
   width: 100%;
+  height: 80px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -188,7 +197,7 @@ p {
 }
 
 #header #nav {
-  height: 80px;
+  height: 100%;
   background: #95c5e0;
   padding: 0 140px;
   display: -webkit-box;
@@ -387,37 +396,6 @@ p {
 /*-------------------------------------------
 キャッチコピー
 -------------------------------------------*/
-.catch {
-  margin: 80px auto 0;
-  width: 40%;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0px 10px 15px #316482;
-}
-
-@media screen and (max-width: 599px) {
-  .catch {
-    width: 80%;
-    margin: 80px auto 0;
-  }
-}
-
-.catch span {
-  font-size: 2.4rem;
-  text-shadow: 0px 10px 6px #316482;
-}
-
-.catch p {
-  display: inline-block;
-}
-
-@media screen and (max-width: 599px) {
-  .catch p {
-    margin-top: 0;
-    font-size: 1.4rem;
-  }
-}
-
 /*-------------------------------------------
 メイン
 -------------------------------------------*/
@@ -457,6 +435,7 @@ p {
   #works,
   #contact {
     width: 100%;
+    margin-bottom: 80px;
   }
 }
 
@@ -500,6 +479,10 @@ p {
   height: 450px;
 }
 
+#service .service-menu:last-child {
+  margin-right: 0;
+}
+
 @media screen and (max-width: 899px) {
   #service .service-menu {
     margin-right: 40px;
@@ -508,17 +491,14 @@ p {
 
 @media screen and (max-width: 599px) {
   #service .service-menu {
-    width: 90%;
-    margin-right: 0;
+    width: 100%;
+    margin: 0 20px;
     margin-bottom: 80px;
   }
   #service .service-menu:last-child {
     margin-bottom: 0;
+    margin-right: 20px;
   }
-}
-
-#service .service-menu:last-child {
-  margin-right: 0;
 }
 
 #service .service-menu .wave {
@@ -687,7 +667,7 @@ p {
 アバウト
 -------------------------------------------*/
 #about {
-  margin: 0 auto 360px;
+  margin: 0 auto 420px;
   width: 100%;
   position: relative;
 }
@@ -695,6 +675,7 @@ p {
 @media screen and (max-width: 599px) {
   #about {
     width: 100%;
+    margin-bottom: 460px;
   }
 }
 
@@ -712,13 +693,14 @@ p {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 599px) {
   #about .about-1,
   #about .about-2 {
-    width: 270px;
-    height: 200px;
+    width: 250px;
+    height: 420px;
   }
 }
 
@@ -729,23 +711,24 @@ p {
 
 @media screen and (max-width: 599px) {
   #about .about-1 {
-    margin-left: 0;
+    margin-left: 20px;
   }
 }
 
-#about .about-1 .txt p {
+#about .about-1 .concept .catch {
+  text-align: center;
+  -webkit-text-decoration: underline wavy #fff;
+          text-decoration: underline wavy #fff;
+}
+
+#about .about-1 .concept .fish {
+  font-size: 2rem;
+  margin-bottom: 36px;
   text-align: center;
 }
 
-@media screen and (max-width: 599px) {
-  #about .about-1 .txt p {
-    font-size: 1.4rem;
-  }
-}
-
-#about .about-1 .txt .black-fish {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+#about .about-1 .concept .concept-txt-sp {
+  font-size: 1.4rem;
 }
 
 #about .about-2 {
@@ -758,27 +741,80 @@ p {
 
 @media screen and (max-width: 599px) {
   #about .about-2 {
-    margin-right: 0;
+    margin-right: 20px;
   }
 }
 
-#about .about-2 .txt p {
-  text-align: center;
+#about .about-2 .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 599px) {
-  #about .about-2 .txt p {
-    font-size: 1.4rem;
+  #about .about-2 .profile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-#about .about-2 .txt .sitename {
-  font-family: Oleo Script;
-  font-size: 2.5rem;
+#about .about-2 .profile-img img {
+  border-radius: 50%;
+  width: 120px;
 }
 
-#about .about-2 .txt .myname {
+@media screen and (max-width: 599px) {
+  #about .about-2 .profile-img img {
+    margin-bottom: 20px;
+  }
+}
+
+#about .about-2 .myname {
+  border-bottom: 1px double #95c5e0;
+}
+
+#about .about-2 .profile-txt-pc {
+  margin-left: 20px;
+}
+
+#about .about-2 .profile-txt-pc .myname {
   margin-bottom: 20px;
+}
+
+#about .about-2 .profile-txt-sp p {
+  font-size: 1.4rem;
+}
+
+#about .about-2 .profile-txt-sp .myname {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  #about .concept-txt-pc,
+  #about .profile-txt-pc {
+    display: block;
+  }
+  #about .concept-txt-sp,
+  #about .profile-txt-sp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #about .concept-txt-pc,
+  #about .profile-txt-pc {
+    display: none;
+  }
+  #about .concept-txt-sp,
+  #about .profile-txt-sp {
+    display: block;
+  }
 }
 
 /*-------------------------------------------
@@ -799,6 +835,12 @@ p {
   }
 }
 
+@media screen and (max-width: 599px) {
+  #contact form dd {
+    margin: 0 20px;
+  }
+}
+
 #contact form input,
 #contact form textarea,
 #contact form select {
@@ -806,22 +848,18 @@ p {
   background: #c7e1ed;
   border-style: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+#contact form input,
+#contact form textarea {
+  padding: 10px;
 }
 
 #contact form input,
 #contact form select {
   height: 40px;
   margin-bottom: 30px;
-}
-
-#contact form textarea {
-  margin-bottom: 30px;
-}
-
-#contact form .red-fish {
-  font-size: 1.6rem;
-  color: #ee0202;
 }
 
 #contact form select {
@@ -867,6 +905,11 @@ p {
   color: #fff;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
+}
+
+#contact form .red-fish {
+  font-size: 1.6rem;
+  color: #ee0202;
 }
 
 /*-------------------------------------------
@@ -957,8 +1000,9 @@ p {
   }
 }
 
-.sample-view p {
+.sample-view .pc-image {
   display: inline-block;
+  margin: 0 auto 10px;
 }
 
 .sample-view img {
@@ -980,16 +1024,18 @@ p {
 
 .sample-txt dt,
 .sample-txt dd {
-  padding: 20px 0;
+  padding: 20px 12px;
   border-bottom: 1px solid #c6c6c6;
 }
 
 .sample-txt dt {
   width: 20%;
+  padding-right: 0;
 }
 
 .sample-txt dd {
   width: 80%;
+  padding-left: 20px;
 }
 
 @media screen and (max-width: 599px) {
@@ -1008,10 +1054,8 @@ p {
 }
 
 #openModal {
-  position: absolute;
-  top: -2px;
-  left: 120px;
   width: 140px;
+  height: 40px;
   background: #c7e1ed;
   opacity: 0.9;
   border-radius: 10px;
@@ -1024,11 +1068,15 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
+  margin: 10px auto;
 }
 
 #openModal p {
   text-align: center;
+}
+
+#openModal:hover {
+  cursor: pointer;
 }
 
 /* モーダルCSSここから */
