@@ -42,6 +42,26 @@ body {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.08em;
   position: relative;
+
+  .pagetop {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #eef6f9;
+    opacity: 0.8;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    color: #95c5e0;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 // ▼レスポンシブ時の右側の余白を消す
