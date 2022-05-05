@@ -30,8 +30,8 @@
     />
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-</script>
+<!-- jQueryのCDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type='text/javascript' src='<?php  echo get_template_directory_uri();?>/js/main.js'></script>
 
